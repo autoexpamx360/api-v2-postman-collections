@@ -1,0 +1,48 @@
+{
+	"info": {
+		"_postman_id": "0d0ecb25-fbda-42dc-92d8-e728821cfdd4",
+		"name": "Shipment registration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5841128",
+		"_collection_link": "https://orange-robot-17995.postman.co/workspace/API-Version-2-Public~fdebacdc-96f6-49f5-bf4b-5ef9cfb100d2/collection/5841128-0d0ecb25-fbda-42dc-92d8-e728821cfdd4?action=share&source=collection_link&creator=5841128"
+	},
+	"item": [
+		{
+			"name": "Register shipment [auto]",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{apiKey}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"number\": \"LAX123456\",\r\n  \"carrierCode\": \"MEDU\",\r\n  \"equipmentDateRange\": {\r\n    \"start\": \"2024-01-15T00:00:00\",\r\n    \"end\": \"2024-02-15T00:00:00\"\r\n  },\r\n  \"dataWebhook\": {\r\n    \"enable\": true,\r\n    \"url\": \"https://example.com/webhook\"\r\n  },\r\n  \"references\": {\r\n    \"ids\": [\r\n      {\r\n        \"type\": \"id\",\r\n        \"value\": \"6fdcf9b4-9ce3-41e7-bf0c-b0456dd85349\"\r\n      }\r\n    ],\r\n    \"parties\": [\r\n      {\r\n        \"type\": \"shipper\",\r\n        \"value\": \"SH001\",\r\n        \"name\": \"Shipping Company LLC\"\r\n      }\r\n    ]\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}shipments/register/shipment",
+					"host": [
+						"{{baseUrl}}shipments"
+					],
+					"path": [
+						"register",
+						"shipment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

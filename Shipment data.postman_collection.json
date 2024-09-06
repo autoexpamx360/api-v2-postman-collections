@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "ccea737d-ae67-45b6-a676-0d8d554fe410",
+		"name": "Shipment data",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5841128",
+		"_collection_link": "https://orange-robot-17995.postman.co/workspace/API-Version-2-Public~fdebacdc-96f6-49f5-bf4b-5ef9cfb100d2/collection/5841128-ccea737d-ae67-45b6-a676-0d8d554fe410?action=share&source=collection_link&creator=5841128"
+	},
+	"item": [
+		{
+			"name": "Get shipment by request id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"eventClassifierOptionType\": \"actual\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}shipments/data/{{shipmentRequestId}}",
+					"host": [
+						"{{baseUrl}}shipments"
+					],
+					"path": [
+						"data",
+						"{{shipmentRequestId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{apiKey}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "shipmentRequestId",
+			"value": "shipment-request-id",
+			"type": "string"
+		}
+	]
+}
